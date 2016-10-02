@@ -1,11 +1,11 @@
 ﻿using ProjetoModeloDDD.Domain.Entities;
 using System.Data.Entity.ModelConfiguration;
 
-namespace ProjetoModeloDDD.Infrastructure.Data.Mappings
+namespace ProjetoModeloDDD.Infrastructure.Data.EntityConfig
 {
-    public class ClientConfigurartion : EntityTypeConfiguration<Client>
+    public class CustomerConfiguration : EntityTypeConfiguration<Customer>
     {
-        public ClientConfigurartion()
+        public CustomerConfiguration()
         {
             HasKey(c => c.Id);
 

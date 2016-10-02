@@ -1,5 +1,5 @@
 ﻿using ProjetoModeloDDD.Domain.Entities;
-using ProjetoModeloDDD.Infrastructure.Data.Mappings;
+using ProjetoModeloDDD.Infrastructure.Data.EntityConfig;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -14,7 +14,8 @@ namespace ProjetoModeloDDD.Infrastructure.Data.Context
         {
         }
 
-        public DbSet<Client> Clients { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -25,7 +26,8 @@ namespace ProjetoModeloDDD.Infrastructure.Data.Context
             modelBuilder.Properties<string>()
                 .Configure(p => p.HasColumnType("varchar").HasMaxLength(100));
 
-            modelBuilder.Configurations.Add(new ClientConfigurartion());
+            modelBuilder.Configurations.Add(new CustomerConfiguration());
+            modelBuilder.Configurations.Add(new ProductConfiguration());
         }
 
         public override int SaveChanges()
