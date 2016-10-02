@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProjetoModeloDDD.Domain.Entities
 {
-    public class Client
+    public class Customer
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -11,11 +11,11 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string Email { get; set; }
         public DateTime CreatedDate { get; set; }
         public bool Active { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual IEnumerable<Product> Products { get; set; }
 
-        public bool SpecialClient(Client client)
+        public static bool SpecialCustomer(Customer customer)
         {
-            return client.Active && DateTime.Now.Year - client.CreatedDate.Year >= 5;
+            return customer.Active && DateTime.Now.Year - customer.CreatedDate.Year >= 5;
         }
     }
 }
