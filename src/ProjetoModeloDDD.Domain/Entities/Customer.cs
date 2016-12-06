@@ -13,9 +13,6 @@ namespace ProjetoModeloDDD.Domain.Entities
         public bool Active { get; set; }
         public virtual IEnumerable<Product> Products { get; set; }
 
-        public static bool SpecialCustomer(Customer customer)
-        {
-            return customer.Active && DateTime.Now.Year - customer.CreatedDate.Year >= 5;
-        }
+        public static bool SpecialCustomer(Customer customer) => customer.Active && DateTime.Now.Year - customer.CreatedDate.Year >= 5;
     }
 }

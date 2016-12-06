@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ProjetoModeloDDD.Domain.Interfaces
+namespace ProjetoModeloDDD.Domain.Contracts.Repositories
 {
     public interface IRepositoryBase<TEntity> : IDisposable
         where TEntity : class
