@@ -1,5 +1,5 @@
-﻿using ProjetoModeloDDD.Domain.Entities;
-using ProjetoModeloDDD.Domain.Interfaces;
+﻿using ProjetoModeloDDD.Domain.Contracts.Repositories;
+using ProjetoModeloDDD.Domain.Entities;
 
 namespace ProjetoModeloDDD.Infrastructure.Data.Repositories
 {
